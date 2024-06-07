@@ -18,8 +18,10 @@ public partial class NotePage : ContentPage
     }
     private void LoadNote(string fileName)
     {
-        Models.Note noteModel = new Models.Note();
-        noteModel.Filename = fileName;
+        Models.Note noteModel = new()
+        {
+            Filename = fileName,
+        };
 
         if (File.Exists(fileName))
         {
